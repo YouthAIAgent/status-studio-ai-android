@@ -1,8 +1,11 @@
-import { registerRootComponent } from 'expo';
+declare const require: any;
 
-import App from './App';
+require("react-native/Libraries/Core/InitializeCore");
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
+const { registerRootComponent } = require("expo");
+const App = require("./App").default;
+
+// registerRootComponent calls AppRegistry.registerComponent('main', () => App).
 // It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
+// the environment is set up appropriately.
 registerRootComponent(App);
